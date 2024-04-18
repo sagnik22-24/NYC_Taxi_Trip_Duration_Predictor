@@ -10,7 +10,7 @@ conda activate venv/
 ### Step 2: Create a .gitignore file
 
 ```
-create the file by right click and include the venv in it
+create the file by right click and include the all the files which you do not need to push to github
 ```
 
 ### Step 3: Create a requirements.txt file 
@@ -25,7 +25,7 @@ This is to install the entire project as a package. Additionally, write a functi
 
 ### Step5: Create a folder `src` 
 ```
-Include exception, logger, and utils python files. Make this folder as a package by including __init__.py file. The scr folder will include another folder with name components and another one with name pipeline will be created. Include __init__.py also in both of them. 
+Include exception, logger, and utils python files. Make this folder as a package by including __init__.py file. The src folder will include a folder with name components and another one with name pipeline. Include __init__.py also in both of them. 
 ```
 #### Step 5.1 Create a folder `components`
 
@@ -37,7 +37,7 @@ Include data_ingestion, data_transformation, model trainer, and __init_.py. Thes
 Create two python files training_pipeline and prediction_pipeline with __init__.py folder
 ``` 
 
-### Step 6: Create a folder called `notebooks` 
+### Step 6: Create a folder called `dataset` 
 ```
 Create a folder called dataset and leave it blank. Data will be pulled from sql and a local copy of that data will be saved as csv in dataset folder.
 ```
