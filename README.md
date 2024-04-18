@@ -1,24 +1,24 @@
 ## End to End Project
 
-### Step 1: Create a new environment
+### Step 1: Create a `new environment`
 
 ```
 conda create -p venv python==3.10.14
 
 conda activate venv/
 ```
-### Step 2: Create a .gitignore file
+### Step 2: Create a `.gitignore file`
 
 ```
 create the file by right click and include the all the files which you do not need to push to github
 ```
 
-### Step 3: Create a requirements.txt file 
+### Step 3: Create a `requirements.txt` file 
 ```
 pip install -r requirements.txt
 ```
 
-### Step 4: Create a setup.py file 
+### Step 4: Create a `setup.py` file 
 ```
 This is to install the entire project as a package. Additionally, write a function to read the packages from requirements.txt
 ```
