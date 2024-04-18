@@ -75,10 +75,7 @@ class CustomData:
                   df['month'] = df['pickup_datetime'].dt.month.astype(object) 
 
                   #hour(0 = 12am, 1 = 1am ... 23 = 11pm)                 
-                  df['hour'] = df['pickup_datetime'].dt.hour.astype(object)  
-
-                  #Extracting time from pickup_datetime
-                  df['pickup_time'] = df['pickup_datetime'].dt.time                         
+                  df['hour'] = df['pickup_datetime'].dt.hour.astype(object)                          
 
                   # Calculating duration of trip in hours
                   df['calculated_duration'] = (df['dropoff_datetime'] - df['pickup_datetime']).dt.total_seconds() / 3600
