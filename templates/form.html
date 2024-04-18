@@ -1,0 +1,119 @@
+<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYC Taxi Trip Duration Predictor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('{{ url_for("static", filename="nyc_taxi.jpg") }}');  /* Specify the path to your image */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+      max-width: 500px;
+      width: 100%;
+    }
+    .form-title {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 60%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-group select {
+      cursor: pointer;
+    }
+    .form-group input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2 class="form-title">End To End Datascience ML Project On
+                              NYC Taxi Trip Duration Prediction
+    </h2>
+    <form action="{{url_for('predict_datapoint')}}" method="post">
+      <center>
+      <div class="form-group">
+        <label for="vendor_id" style="display: inline-block; margin-right: 95px;">Vendor ID:</label>
+        <select id="vendor_id" name="vendor_id">
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="pickup_datetime" style="display: inline-block; margin-right: 38px;">Pickup Date Time:</label>
+        <input type="text" id="pickup_datetime" name="pickup_datetime" placeholder="Format dd-mm-yyyy  hh:mm:ss">
+      </div>
+      <div class="form-group">
+        <label for="dropoff_datetime" style="display: inline-block; margin-right: 25px;">Drop Off Date Time:</label>
+        <input type="text" id="dropoff_datetime" name="dropoff_datetime" placeholder="Format dd-mm-yyyy  hh:mm:ss">
+      </div>
+      <div class="form-group">
+        <label for="passenger_count" style="display: inline-block; margin-right: 40px;">Passenger Count:</label>
+        <select id="passenger_count" name="passenger_count">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="pickup_longitude" style="display: inline-block; margin-right: 40px;">Pickup Longitude:</label>
+        <input type="text" id="pickup_longitude" name="pickup_longitude" placeholder="Example:  -73.9821548461914">
+      </div>
+      <div class="form-group">
+        <label for="pickup_latitude" style="display: inline-block; margin-right: 55px;">Pickup Latitude:</label>
+        <input type="text" id="pickup_latitude" name="pickup_latitude" placeholder="Example:  40.7679367065429">
+      </div>
+      <div class="form-group">
+        <label for="dropoff_longitude" style="display: inline-block; margin-right: 36px;">Dropoff Longitude:</label>
+        <input type="text" id="dropoff_longitude" name="dropoff_longitude" placeholder="Example:  -73.9646301269531">
+      </div>
+      <div class="form-group">
+        <label for="dropoff_latitude" style="display: inline-block; margin-right: 50px;">Dropoff Latitude:</label>
+        <input type="text" id="dropoff_latitude" name="dropoff_latitude" placeholder="Example:  40.7656021118164">
+      </div>
+      <br>
+      <div class="form-group" style="clear:both; width: 200px;">
+        <input type="submit" value="Submit">
+      </div>
+    </center>
+    </form>
+    <br>
+    {% if final_result %}
+      <center><p style="font-weight: bold; font-size: large;">Trip Duration In Minutes: {{ final_result }}</p></center>
+    {% endif %}
+    <br>
+  </div>
+</body>
+</html>

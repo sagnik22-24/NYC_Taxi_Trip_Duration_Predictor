@@ -1,0 +1,12 @@
+#Contains all the libraries required in the project
+pandas 
+numpy 
+mysql-connector-python
+sqlalchemy
+flask 
+scikit-learn
+seaborn
+datetime
+geopy
+IPython
+-e .

@@ -1,0 +1,6 @@
+artifacts/model.pkl filter=lfs diff=lfs merge=lfs -text
+artifacts/preprocessor.pkl filter=lfs diff=lfs merge=lfs -text
+artifacts/raw.csv filter=lfs diff=lfs merge=lfs -text
+artifacts/test.csv filter=lfs diff=lfs merge=lfs -text
+artifacts/train.csv filter=lfs diff=lfs merge=lfs -text
+dataset/nyc_taxi_data.csv filter=lfs diff=lfs merge=lfs -text
