@@ -86,6 +86,6 @@ def calculate_haversine_distance(lat1, lng1, lat2, lng2):
     # Haversine formula used to calculate the distance between the coordinates
     a = np.sin(dlat / 2) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlng / 2) ** 2
     c = 2 * np.arcsin(np.sqrt(a))
-    h = AVG_EARTH_RADIUS * c
+    distance = AVG_EARTH_RADIUS * c
 
-    return h
+    return distance
