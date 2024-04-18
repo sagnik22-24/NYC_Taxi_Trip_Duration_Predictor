@@ -1,4 +1,4 @@
-## End to End Project
+## End to End Project On NYC Taxi Trip Duration Prediction
 
 ### Step 1: Create a `new environment`
 
